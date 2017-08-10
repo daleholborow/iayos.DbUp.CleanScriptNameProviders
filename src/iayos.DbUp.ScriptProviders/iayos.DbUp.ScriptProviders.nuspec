@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>iayos.DbUp.ScriptProviders</id>
+		<version>$version$</version>
+		<authors>dale.holborow</authors>
+		<owners>dale.holborow</owners>
+		<projectUrl>https://github.com/daleholborow/iayos.DbUp.ScriptProviders</projectUrl>
+		<licenseUrl>https://github.com/daleholborow/iayos.DbUp.ScriptProviders/blob/master/LICENSE</licenseUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>
+			Provide clean names (ie .sql filename and .cs classname WITHOUT namespace and folder path included) for DbUp migration scripts 
+			and classes (embedded and filesystem) with namespace removed to futureproof refactoring and relocation of script files.
+			Inspired by my own experience where refactoring would break migrations, and the support ticket: https://github.com/DbUp/DbUp/issues/166
+		</description>
+		<releaseNotes>
+			Initial version
+		</releaseNotes>
+		<copyright>Copyright © 2017</copyright>
+		<summary>
+			Provide clean names (ie .sql filename and .cs classname WITHOUT namespace and folder path included) for DbUp migration scripts 
+			and classes (embedded and filesystem) with namespace removed to futureproof refactoring and relocation of script files.
+		</summary>
+		<tags>database schema migration DbUp C# in-a-year-or-so</tags>
+		<title>iayos.DbUp.ScriptProviders</title>
+		<dependencies>
+		</dependencies>
+	</metadata>
+</package>
