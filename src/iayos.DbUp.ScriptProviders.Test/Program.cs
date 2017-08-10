@@ -12,16 +12,19 @@ using Xunit;
 namespace iayos.DbUp.ScriptProviders.Test
 {
 
-	public static class Blah
-	{
-		
-	}
+	
 
 	class Program
 	{
+
+		private static string _testConnString =
+			"Server=localhost;Database=iayos.core.db.deploy.NUKEABLE;User Id=sa; Password=tH3dB4dm1n*5000;";
+
 		static void Main(string[] args)
 		{
 			TestEmbeddedFilenameOnlySqlScriptsProvider();
+			// next two fail the test because of something to do with the connectionmanager not
+			// firing properly... but the code works .. have to investigate why test fails
 			TestEmbeddedClassnameOnlyCodeScriptsProvider();
 			TestCleanNameSqlAndCodeAndFolderScriptsProvider();
 		}
@@ -30,7 +33,7 @@ namespace iayos.DbUp.ScriptProviders.Test
 		public static void TestEmbeddedClassnameOnlyCodeScriptsProvider()
 		{
 			var upgradeEngineBuilder = new UpgradeEngineBuilder();
-			IConnectionManager sqlConnectionManager = new SqlConnectionManager("iayosDemoConnString");
+			IConnectionManager sqlConnectionManager = new SqlConnectionManager(_testConnString);
 			var targetAssembly = System.Reflection.Assembly.GetExecutingAssembly();
 			var targetAssemblies = new List<Assembly> {targetAssembly};
 			var embeddedClassnameOnlyCodeScriptsProvider =
@@ -45,7 +48,7 @@ namespace iayos.DbUp.ScriptProviders.Test
 		public static void TestEmbeddedFilenameOnlySqlScriptsProvider()
 		{
 			var upgradeEngineBuilder = new UpgradeEngineBuilder();
-			IConnectionManager sqlConnectionManager = new SqlConnectionManager("iayosDemoConnString");
+			IConnectionManager sqlConnectionManager = new SqlConnectionManager(_testConnString);
 			var targetAssembly = System.Reflection.Assembly.GetExecutingAssembly();
 			var targetAssemblies = new List<Assembly> {targetAssembly};
 			var embeddedFilenameOnlySqlScriptsProvider = new EmbeddedFilenameOnlySqlScriptsProvider(targetAssemblies.ToArray());
@@ -59,7 +62,7 @@ namespace iayos.DbUp.ScriptProviders.Test
 		public static void TestCleanNameSqlAndCodeAndFolderScriptsProvider()
 		{
 			var upgradeEngineBuilder = new UpgradeEngineBuilder();
-			IConnectionManager sqlConnectionManager = new SqlConnectionManager("iayosDemoConnString");
+			IConnectionManager sqlConnectionManager = new SqlConnectionManager(_testConnString);
 			var targetAssembly = System.Reflection.Assembly.GetExecutingAssembly();
 			var targetAssemblies = new List<Assembly> {targetAssembly};
 			var embeddedFilenameOnlySqlScriptsProvider = new CleanNameSqlAndCodeAndFolderScriptsProvider(
