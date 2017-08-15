@@ -33,6 +33,7 @@ namespace DbUp.Support.SqlServer
 		public IEnumerable<SqlScript> GetScripts(IConnectionManager connectionManager)
 		{
 			var script = typeof(IScript);
+
 			var codeScripts =
 				connectionManager.ExecuteCommandsWithManagedConnection(dbCommandFactory => _assemblies.SelectMany(a =>
 					a.GetTypes()

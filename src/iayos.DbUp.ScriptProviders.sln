@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildAndDeploy", "BuildAndD
 		..\appveyor.yml = ..\appveyor.yml
 		iayos.DbUp.ScriptProviders\iayos.DbUp.ScriptProviders.nuspec = iayos.DbUp.ScriptProviders\iayos.DbUp.ScriptProviders.nuspec
 		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iayos.DbUp.ScriptProviders", "iayos.DbUp.ScriptProviders\iayos.DbUp.ScriptProviders.csproj", "{DF132DC0-1667-4056-BB9F-465C405EB913}"
